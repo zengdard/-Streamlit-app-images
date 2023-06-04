@@ -3,11 +3,8 @@ import requests
 import keras
 from keras.models import load_model
 import streamlit as st
-from PIL import Image
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
-
-from PIL import Image, ImageChops, ImageEnhance
 class_names = ['fake', 'real']
 os.environ["HUGGINGFACE_TOKEN"] = "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"
 
@@ -28,12 +25,6 @@ def load_keras_model_from_hub(model_id):
     model_url = f"https://huggingface.co/Nielzac/Midjourney_image_detector/resolve/main/MIDJOURNEY_DETECT.h5"
     local_path = "MIDJOURNEY_DETECT.h5"
     download_file(model_url, local_path)
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
-
-import cv2
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
 def apply_fake_filter(image, fake_score, additional_text):
     # Convert the image to a NumPy array
     image_array = np.array(image)
