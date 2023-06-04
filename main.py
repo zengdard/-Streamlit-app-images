@@ -4,7 +4,7 @@ import keras
 from keras.models import load_model
 import streamlit as st
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageChops
 class_names = ['fake', 'real']
 os.environ["HUGGINGFACE_TOKEN"] = "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"
 
