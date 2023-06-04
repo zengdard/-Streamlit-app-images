@@ -103,11 +103,11 @@ uploaded_file = st.file_uploader("Choisissez une image", type=["jpg", "jpeg", "p
 
 if uploaded_file is not None:
     try:
-        model = load_model('model_casia_run1.h5')
+        model = load_model('MIDJOURNEY_DETECT.h5')
         model.compile(optimizer="adam", loss='categorical_crossentropy', metrics=['accuracy'])
 
     except:
-        load_keras_model_from_hub('Altered_Picture_Model')
+        load_keras_model_from_hub('Midjourney_image_detector')
 
     image3 = Image.open(uploaded_file)
     image = image3
@@ -115,7 +115,7 @@ if uploaded_file is not None:
 
     image.save("chemin_de_sauvegarde.jpg")
     print('#################OK')
-    model = load_model('model_casia_run1.h5', compile=False)
+    model = load_model('MIDJOURNEY_DETECT.h5', compile=False)
     model.compile(optimizer="adam", loss='categorical_crossentropy', metrics=['accuracy'])
     #filtered_image = filtered_image.convert("RGB")
     #filtered_image.save("filtered_image.jpg", "JPEG")
